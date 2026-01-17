@@ -6,7 +6,7 @@ Installs [Oh My Posh](https://ohmyposh.dev/) - a prompt theme engine for any she
 
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {}
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {}
 }
 ```
 

@@ -41,8 +41,8 @@ For production environments, consider pinning to a specific version:
 ```json
 {
   "features": {
-    "ghcr.io/YOUR_USERNAME/YOUR_REPO/oh-my-posh:1": {
-      "version": "19.0.0"
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
+      "version": "latest"
     }
   }
 }
