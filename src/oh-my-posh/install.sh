@@ -32,16 +32,21 @@ case $ARCH in
         ;;
 esac
 
-# Install Oh My Posh
+# Install Oh My Posh to /usr/local/bin
 echo "Installing Oh My Posh for $ARCH..."
 if [ "$VERSION" = "latest" ]; then
-    curl -s https://ohmyposh.dev/install.sh | bash -s
+    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d /usr/local/bin
 else
-    curl -s https://ohmyposh.dev/install.sh | bash -s -- -v $VERSION
+    curl -s https://ohmyposh.dev/install.sh | bash -s -- -d /usr/local/bin -v $VERSION
 fi
 
-# Ensure oh-my-posh is in PATH
-export PATH=$PATH:/usr/local/bin
+# Verify installation
+if ! command -v oh-my-posh &> /dev/null; then
+    echo "ERROR: oh-my-posh installation failed"
+    exit 1
+fi
+
+echo "Oh My Posh installed successfully at $(which oh-my-posh)"
 
 # Configure theme if provided
 THEME_CONFIG=""
