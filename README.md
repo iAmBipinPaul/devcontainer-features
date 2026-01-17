@@ -36,6 +36,7 @@ Or with a theme:
 | `theme` | string | `""` | Theme URL or file path (empty = no theme) |
 | `installForBash` | boolean | `true` | Configure for bash shell |
 | `installForZsh` | boolean | `true` | Configure for zsh shell |
+| `installForPwsh` | boolean | `true` | Configure for PowerShell (auto-skips if not installed) |
 
 ## Theme Options
 
@@ -106,6 +107,20 @@ Installs Oh My Posh with default settings (both bash and zsh, no theme).
     }
 }
 ```
+
+### PowerShell Support
+```jsonc
+{
+    "features": {
+        "ghcr.io/devcontainers/features/powershell:1": {},
+        "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
+            "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json",
+            "installForPwsh": true
+        }
+    }
+}
+```
+Note: PowerShell must be installed first (e.g., using the PowerShell feature).
 
 ## More Information
 

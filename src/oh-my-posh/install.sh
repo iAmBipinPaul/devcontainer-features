@@ -7,12 +7,14 @@ echo "Activating feature 'oh-my-posh'"
 VERSION=${VERSION:-latest}
 THEME=${THEME:-""}
 INSTALL_FOR_BASH=${INSTALLFORBASH:-true}
-INSTALL_FOR_ZSH=${INSTALLFORZSH:-false}
+INSTALL_FOR_ZSH=${INSTALLFORZSH:-true}
+INSTALL_FOR_PWSH=${INSTALLFORPWSH:-true}
 
 echo "Installing Oh My Posh version: $VERSION"
 echo "Theme: ${THEME:-none}"
 echo "Install for bash: $INSTALL_FOR_BASH"
 echo "Install for zsh: $INSTALL_FOR_ZSH"
+echo "Install for PowerShell: $INSTALL_FOR_PWSH"
 
 # Ensure curl and unzip are installed
 if ! command -v curl &> /dev/null; then
@@ -138,6 +140,48 @@ EOF
     fi
     
     echo "Oh My Posh configured for zsh"
+fi
+
+# Configure for PowerShell
+if [ "$INSTALL_FOR_PWSH" = "true" ]; then
+    echo "Configuring Oh My Posh for PowerShell..."
+    
+    # Check if PowerShell is installed
+    if ! command -v pwsh &> /dev/null; then
+        echo "PowerShell (pwsh) not found. Skipping PowerShell configuration."
+        echo "To use Oh My Posh with PowerShell, install PowerShell first."
+    else
+        # PowerShell profile path
+        PWSH_PROFILE_DIR="${_REMOTE_USER_HOME}/.config/powershell"
+        PWSH_PROFILE="${PWSH_PROFILE_DIR}/Microsoft.PowerShell_profile.ps1"
+        
+        # Create profile directory if it doesn't exist
+        mkdir -p "$PWSH_PROFILE_DIR"
+        
+        # Create profile file if it doesn't exist
+        touch "$PWSH_PROFILE"
+        
+        # Add Oh My Posh initialization to PowerShell profile
+        cat >> "$PWSH_PROFILE" << 'EOF'
+
+# Oh My Posh configuration
+EOF
+        
+        if [ -n "$THEME_CONFIG" ]; then
+            # Remove quotes from THEME_CONFIG for PowerShell
+            THEME_PATH=$(echo "$THEME_CONFIG" | sed "s/--config '\(.*\)'/\1/")
+            echo "oh-my-posh init pwsh --config '$THEME_PATH' | Invoke-Expression" >> "$PWSH_PROFILE"
+        else
+            echo "oh-my-posh init pwsh | Invoke-Expression" >> "$PWSH_PROFILE"
+        fi
+        
+        # Set proper ownership
+        if [ "$_REMOTE_USER" != "root" ]; then
+            chown -R $_REMOTE_USER:$_REMOTE_USER "$PWSH_PROFILE_DIR"
+        fi
+        
+        echo "Oh My Posh configured for PowerShell"
+    fi
 fi
 
 echo "Oh My Posh installation complete!"

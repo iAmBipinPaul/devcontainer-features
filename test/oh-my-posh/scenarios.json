@@ -39,5 +39,15 @@
                 "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/night-owl.omp.json"
             }
         }
+    },
+    "with_powershell": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/powershell:1": {},
+            "oh-my-posh": {
+                "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json",
+                "installForPwsh": true
+            }
+        }
     }
 }

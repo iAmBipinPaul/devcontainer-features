@@ -24,8 +24,11 @@ The feature automatically detects how to handle the `theme` parameter:
 The feature adds Oh My Posh initialization to your shell's RC file:
 - **Bash**: `~/.bashrc`
 - **Zsh**: `~/.zshrc`
+- **PowerShell**: `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
 
-You can enable both shells simultaneously by setting both options to `true`.
+You can enable multiple shells simultaneously by setting their options to `true`.
+
+**Note:** For PowerShell support, PowerShell must be installed in the container first (e.g., using the official PowerShell dev container feature).
 
 ### Architecture Support
 

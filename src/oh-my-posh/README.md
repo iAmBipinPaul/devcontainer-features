@@ -18,6 +18,7 @@ Installs [Oh My Posh](https://ohmyposh.dev/) - a prompt theme engine for any she
 | theme | Theme URL or file path (see https://ohmyposh.dev/docs/themes) | string | "" |
 | installForBash | Configure Oh My Posh for bash shell | boolean | true |
 | installForZsh | Configure Oh My Posh for zsh shell | boolean | true |
+| installForPwsh | Configure Oh My Posh for PowerShell (auto-skips if not installed) | boolean | true |
 
 ## Theme Configuration
 
@@ -91,6 +92,18 @@ Reference a theme file in your repository:
     }
 }
 ```
+
+### With PowerShell
+```json
+"features": {
+    "ghcr.io/devcontainers/features/powershell:1": {},
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
+        "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json",
+        "installForPwsh": true
+    }
+}
+```
+Note: Install PowerShell feature first for PowerShell support.
 
 ## Notes
 
