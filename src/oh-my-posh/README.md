@@ -6,7 +6,7 @@ Installs [Oh My Posh](https://ohmyposh.dev/) - a prompt theme engine for any she
 
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {}
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {}
 }
 ```
 
@@ -27,7 +27,7 @@ The `theme` option is flexible and accepts three types of values:
 Use any of the [official Oh My Posh themes](https://ohmyposh.dev/docs/themes):
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
         "theme": "jandedobbeleer"
     }
 }
@@ -37,7 +37,7 @@ Use any of the [official Oh My Posh themes](https://ohmyposh.dev/docs/themes):
 Provide a direct URL to a theme configuration file:
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
         "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json"
     }
 }
@@ -47,7 +47,7 @@ Provide a direct URL to a theme configuration file:
 Reference a theme file in your repository:
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
         "theme": "/workspaces/myproject/.devcontainer/my-theme.omp.json"
     }
 }
@@ -58,14 +58,14 @@ Reference a theme file in your repository:
 ### Basic Installation (Default Theme)
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {}
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {}
 }
 ```
 
 ### With Built-in Theme
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
         "theme": "atomic"
     }
 }
@@ -74,7 +74,7 @@ Reference a theme file in your repository:
 ### With Custom Theme URL
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
         "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/night-owl.omp.json"
     }
 }
@@ -83,7 +83,7 @@ Reference a theme file in your repository:
 ### For Both Bash and Zsh
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
         "theme": "jandedobbeleer",
         "installForBash": true,
         "installForZsh": true
@@ -94,8 +94,8 @@ Reference a theme file in your repository:
 ### Specific Version
 ```json
 "features": {
-    "ghcr.io/YOUR_USERNAME/devcontainer-features/oh-my-posh:1": {
-        "version": "19.0.0",
+    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
+        "version": "latest",
         "theme": "paradox"
     }
 }

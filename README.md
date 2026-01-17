@@ -10,7 +10,7 @@ Add this feature to your `.devcontainer/devcontainer.json`:
 {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/YOUR_USERNAME/YOUR_REPO/oh-my-posh:1": {
+        "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
             "theme": "jandedobbeleer",
             "installForBash": true,
             "installForZsh": false
