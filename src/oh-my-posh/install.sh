@@ -14,6 +14,12 @@ echo "Theme: ${THEME:-none}"
 echo "Install for bash: $INSTALL_FOR_BASH"
 echo "Install for zsh: $INSTALL_FOR_ZSH"
 
+# Ensure curl is installed
+if ! command -v curl &> /dev/null; then
+    echo "curl not found, installing..."
+    apt-get update && apt-get install -y curl
+fi
+
 # Detect architecture
 ARCH=$(uname -m)
 case $ARCH in
