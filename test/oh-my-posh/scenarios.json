@@ -35,7 +35,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "oh-my-posh": {
-                "version": "19.0.0",
+                "version": "latest",
                 "theme": "night-owl"
             }
         }
