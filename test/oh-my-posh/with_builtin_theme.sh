@@ -1,11 +1,15 @@
 #!/bin/bash
 
+# This test file will be executed against one of the scenarios devcontainer.json test that
+# includes the 'oh-my-posh' feature with "theme": "jandedobbeleer" option.
+
 set -e
 
 # Optional: Import test library
 source dev-container-features-test-lib
 
 # Feature-specific tests
+# The 'check' command comes from the dev-container-features-test-lib.
 check "oh-my-posh is installed" which oh-my-posh
 check "oh-my-posh version" oh-my-posh --version
 

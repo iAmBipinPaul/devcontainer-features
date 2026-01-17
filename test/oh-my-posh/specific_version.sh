@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This test file will be executed against one of the scenarios devcontainer.json test that
+# includes the 'oh-my-posh' feature with a specific version.
+
 set -e
 
 # Optional: Import test library
