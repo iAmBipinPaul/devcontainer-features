@@ -1,7 +1,7 @@
 {
     "name": "Oh My Posh",
     "id": "oh-my-posh",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Installs Oh My Posh - a prompt theme engine for any shell",
     "options": {
         "version": {
