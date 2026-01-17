@@ -14,10 +14,15 @@ echo "Theme: ${THEME:-none}"
 echo "Install for bash: $INSTALL_FOR_BASH"
 echo "Install for zsh: $INSTALL_FOR_ZSH"
 
-# Ensure curl is installed
+# Ensure curl and unzip are installed
 if ! command -v curl &> /dev/null; then
     echo "curl not found, installing..."
     apt-get update && apt-get install -y curl
+fi
+
+if ! command -v unzip &> /dev/null; then
+    echo "unzip not found, installing..."
+    apt-get update && apt-get install -y unzip
 fi
 
 # Detect architecture
