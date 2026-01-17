@@ -9,7 +9,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "oh-my-posh": {
-                "theme": "jandedobbeleer"
+                "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json"
             }
         }
     },
@@ -25,7 +25,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "oh-my-posh": {
-                "theme": "paradox",
+                "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/paradox.omp.json",
                 "installForBash": true,
                 "installForZsh": true
             }
@@ -36,7 +36,7 @@
         "features": {
             "oh-my-posh": {
                 "version": "latest",
-                "theme": "night-owl"
+                "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/night-owl.omp.json"
             }
         }
     }

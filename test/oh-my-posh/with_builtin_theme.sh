@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This test file will be executed against one of the scenarios devcontainer.json test that
-# includes the 'oh-my-posh' feature with "theme": "jandedobbeleer" option.
+# includes the 'oh-my-posh' feature with theme URL option.
 
 set -e
 
@@ -15,7 +15,7 @@ check "oh-my-posh version" oh-my-posh --version
 
 # Check if bash configuration exists with theme
 check "bash configuration with theme exists" grep -q "oh-my-posh init bash" ~/.bashrc
-check "theme configuration exists" grep -q "jandedobbeleer" ~/.bashrc
+check "theme configuration exists" grep -q "jandedobbeleer.omp.json" ~/.bashrc
 
 # Report result
 reportResults

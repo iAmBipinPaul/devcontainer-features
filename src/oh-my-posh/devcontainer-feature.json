@@ -1,7 +1,7 @@
 {
     "name": "Oh My Posh",
     "id": "oh-my-posh",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Installs Oh My Posh - a prompt theme engine for any shell",
     "options": {
         "version": {
@@ -12,7 +12,7 @@
         "theme": {
             "type": "string",
             "default": "",
-            "description": "Theme to use - can be a built-in theme name (e.g., 'jandedobbeleer'), a URL (https://...), or a file path. Leave empty to skip theme configuration."
+            "description": "Theme URL or file path (see https://ohmyposh.dev/docs/themes for theme URLs). Leave empty to skip theme configuration."
         },
         "installForBash": {
             "type": "boolean",

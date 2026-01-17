@@ -15,7 +15,9 @@ The feature automatically detects how to handle the `theme` parameter:
 
 1. **URL Detection**: If the theme starts with `http://` or `https://`, it's treated as a URL
 2. **Path Detection**: If the theme starts with `/`, `./`, `../`, or `~`, it's treated as a file path
-3. **Built-in Theme**: Otherwise, it's treated as a built-in theme name
+3. **Invalid Input**: Any other format will result in an error
+
+**Note:** Theme names (e.g., "jandedobbeleer") are NOT supported. You must provide the full URL or file path. Visit [https://ohmyposh.dev/docs/themes](https://ohmyposh.dev/docs/themes) to find theme URLs.
 
 ### Shell Configuration
 
@@ -69,21 +71,21 @@ Oh My Posh is designed to be fast, but complex themes with many segments may add
 **Development Container with Git Info**:
 ```json
 {
-  "theme": "jandedobbeleer"  // Shows git branch, status, and more
+  "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json"
 }
 ```
 
 **Minimal Prompt**:
 ```json
 {
-  "theme": "pure"  // Clean, minimal prompt
+  "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/pure.omp.json"
 }
 ```
 
 **Full-Featured Prompt**:
 ```json
 {
-  "theme": "powerlevel10k_rainbow"  // Shows everything
+  "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/powerlevel10k_rainbow.omp.json"
 }
 ```
 

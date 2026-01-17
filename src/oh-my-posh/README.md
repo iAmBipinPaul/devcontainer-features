@@ -15,26 +15,16 @@ Installs [Oh My Posh](https://ohmyposh.dev/) - a prompt theme engine for any she
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Version of Oh My Posh to install | string | latest |
-| theme | Theme to use - can be a built-in theme name, URL, or file path | string | "" |
+| theme | Theme URL or file path (see https://ohmyposh.dev/docs/themes) | string | "" |
 | installForBash | Configure Oh My Posh for bash shell | boolean | true |
-| installForZsh | Configure Oh My Posh for zsh shell | boolean | false |
+| installForZsh | Configure Oh My Posh for zsh shell | boolean | true |
 
 ## Theme Configuration
 
-The `theme` option is flexible and accepts three types of values:
+The `theme` option accepts two types of values:
 
-### 1. Built-in Theme Name
-Use any of the [official Oh My Posh themes](https://ohmyposh.dev/docs/themes):
-```json
-"features": {
-    "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
-        "theme": "jandedobbeleer"
-    }
-}
-```
-
-### 2. Theme URL
-Provide a direct URL to a theme configuration file:
+### 1. Theme URL
+Provide a direct URL to a theme configuration file from the [official themes](https://ohmyposh.dev/docs/themes):
 ```json
 "features": {
     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
@@ -43,7 +33,7 @@ Provide a direct URL to a theme configuration file:
 }
 ```
 
-### 3. File Path
+### 2. File Path
 Reference a theme file in your repository:
 ```json
 "features": {
@@ -53,40 +43,41 @@ Reference a theme file in your repository:
 }
 ```
 
+**Find theme URLs:** Visit [https://ohmyposh.dev/docs/themes](https://ohmyposh.dev/docs/themes) to browse all available themes and copy their JSON URLs.
+
 ## Examples
 
-### Basic Installation (Default Theme)
+### Basic Installation (No Theme)
 ```json
 "features": {
     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {}
 }
 ```
 
-### With Built-in Theme
+### With Theme URL
 ```json
 "features": {
     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
-        "theme": "atomic"
+        "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/atomic.omp.json"
     }
 }
 ```
 
-### With Custom Theme URL
+### With Custom Theme File
 ```json
 "features": {
     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
-        "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/night-owl.omp.json"
+        "theme": "/workspaces/project/.devcontainer/custom-theme.omp.json"
     }
 }
 ```
 
-### For Both Bash and Zsh
+### Bash Only
 ```json
 "features": {
     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
-        "theme": "jandedobbeleer",
-        "installForBash": true,
-        "installForZsh": true
+        "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/paradox.omp.json",
+        "installForZsh": false
     }
 }
 ```
@@ -96,7 +87,7 @@ Reference a theme file in your repository:
 "features": {
     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
         "version": "latest",
-        "theme": "paradox"
+        "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/night-owl.omp.json"
     }
 }
 ```
@@ -105,8 +96,8 @@ Reference a theme file in your repository:
 
 - After installation, you may need to reload your shell or restart the container for changes to take effect
 - The feature automatically detects your system architecture (amd64, arm64, arm)
-- Built-in themes are cached locally for faster loading
-- Custom themes via URL or file path are loaded directly
+- Theme must be provided as a URL or file path (theme names are not supported)
+- Find theme URLs at [https://ohmyposh.dev/docs/themes](https://ohmyposh.dev/docs/themes)
 
 ## Resources
 

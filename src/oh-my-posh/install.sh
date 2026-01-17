@@ -73,10 +73,9 @@ if [ -n "$THEME" ]; then
         echo "Theme is a file path, will use directly"
         THEME_CONFIG="--config '$THEME'"
     else
-        # Assume it's a built-in theme name
-        echo "Theme is a built-in theme name"
-        CACHE_PATH=$(oh-my-posh cache path)
-        THEME_CONFIG="--config ${CACHE_PATH}/themes/${THEME}.omp.json"
+        echo "ERROR: Theme must be a URL (https://...) or file path (/path/to/theme.omp.json)"
+        echo "Visit https://ohmyposh.dev/docs/themes to find theme URLs"
+        exit 1
     fi
 fi
 
