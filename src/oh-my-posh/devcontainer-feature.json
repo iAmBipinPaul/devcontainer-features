@@ -1,0 +1,31 @@
+{
+    "name": "Oh My Posh",
+    "id": "oh-my-posh",
+    "version": "1.0.0",
+    "description": "Installs Oh My Posh - a prompt theme engine for any shell",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Version of Oh My Posh to install (e.g., 'latest' or specific version like '19.0.0')"
+        },
+        "theme": {
+            "type": "string",
+            "default": "",
+            "description": "Theme to use - can be a built-in theme name (e.g., 'jandedobbeleer'), a URL (https://...), or a file path. Leave empty to skip theme configuration."
+        },
+        "installForBash": {
+            "type": "boolean",
+            "default": true,
+            "description": "Configure Oh My Posh for bash shell"
+        },
+        "installForZsh": {
+            "type": "boolean",
+            "default": false,
+            "description": "Configure Oh My Posh for zsh shell"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

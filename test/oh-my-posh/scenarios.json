@@ -1,0 +1,43 @@
+{
+    "default": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "oh-my-posh": {}
+        }
+    },
+    "with_builtin_theme": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "oh-my-posh": {
+                "theme": "jandedobbeleer"
+            }
+        }
+    },
+    "with_theme_url": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "oh-my-posh": {
+                "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/atomic.omp.json"
+            }
+        }
+    },
+    "bash_and_zsh": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "oh-my-posh": {
+                "theme": "paradox",
+                "installForBash": true,
+                "installForZsh": true
+            }
+        }
+    },
+    "specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "oh-my-posh": {
+                "version": "19.0.0",
+                "theme": "night-owl"
+            }
+        }
+    }
+}
