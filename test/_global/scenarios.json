@@ -3,7 +3,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "oh-my-posh": {
-                "theme": "jandedobbeleer"
+                "theme": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json"
             }
         }
     }
