@@ -21,7 +21,7 @@
         },
         "installForZsh": {
             "type": "boolean",
-            "default": false,
+            "default": true,
             "description": "Configure Oh My Posh for zsh shell"
         }
     },

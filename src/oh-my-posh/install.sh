@@ -75,7 +75,8 @@ if [ -n "$THEME" ]; then
     else
         # Assume it's a built-in theme name
         echo "Theme is a built-in theme name"
-        THEME_CONFIG="--config \$(oh-my-posh cache path)/themes/${THEME}.omp.json"
+        CACHE_PATH=$(oh-my-posh cache path)
+        THEME_CONFIG="--config ${CACHE_PATH}/themes/${THEME}.omp.json"
     fi
 fi
 
